@@ -1,0 +1,29 @@
+{
+  "name": "bdd",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@badeball/cypress-cucumber-preprocessor": "^22.0.1",
+    "cypress": "^14.3.2",
+    "cypress-cucumber-preprocessor": "^4.3.1",
+    "multiple-cucumber-html-reporter": "^3.9.2"
+  },
+  "cypress-cucumber-preprocessor": {
+    "nonGlobalStepDefinations": true,
+    "stepDefinitions": "cypress/e2e/PageObjects/"
+  },
+  "dependencies": {
+    "@bahmutov/cypress-esbuild-preprocessor": "^2.2.4"
+  },
+  "scripts": {
+    "test": "cypress run --env cucumberJson=true",
+    "generate:report": "node generate-report.js"
+  }
+}
